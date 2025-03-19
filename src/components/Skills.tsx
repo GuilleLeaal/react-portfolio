@@ -5,7 +5,7 @@ import {
 import { 
   SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiMysql 
 } from 'react-icons/si';
-import { MdComputer, MdGroups, MdHttps } from 'react-icons/md';
+import { MdComputer, MdGroups} from 'react-icons/md';
 
 export default function Skills() {
   const skills = [
