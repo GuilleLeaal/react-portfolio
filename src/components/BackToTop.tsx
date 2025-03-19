@@ -21,11 +21,13 @@ export default function BackToTop() {
     showButton && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-cyan-500 hover:bg-cyan-600 text-white p-4 rounded-full 
-                   shadow-lg transition duration-300 hover:scale-110 z-50"
+        className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 
+             bg-cyan-500 hover:bg-cyan-600 text-white p-4 rounded-full 
+             shadow-lg transition duration-300 hover:scale-110 z-50"
       >
         <FiArrowUp size={24} />
       </button>
+
     )
   );
 }

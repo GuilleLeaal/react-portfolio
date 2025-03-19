@@ -16,7 +16,7 @@ export default function Hero() {
           Hello! I'm <span className="text-cyan-400">Guillermo Leal</span>
         </h1>
         <p className="text-lg max-w-xl text-gray-300">
-          I'm a <span className="text-cyan-400 font-semibold">Junior Developer</span> with a strong passion for technology and continuous learning.
+          I'm a <span className="text-cyan-400 font-semibold">Software Developer</span> with a strong passion for technology and continuous learning.
           <br />I am currently looking for <span className="text-cyan-400 font-semibold">new opportunities</span> to keep growing professionally.
           <br />In this portfolio, I showcase some of my <span className="text-cyan-400 font-semibold">projects</span>, technical skills, and a bit more about myself.
         </p>
@@ -28,7 +28,6 @@ export default function Hero() {
         </a>
       </motion.div>
 
-
       {/* Imagen animada desde la derecha */}
       <motion.div
         initial={{ opacity: 0, x: 100 }}
@@ -36,13 +35,18 @@ export default function Hero() {
         transition={{ duration: 1 }}
         className="md:w-1/2 flex justify-center items-center mt-10 md:mt-0"
       >
-        <div className="w-[550px] h-[550px] rounded-full border-4 border-cyan-500 shadow-xl overflow-hidden flex items-center justify-center bg-black">
+        {/* Hover con animación */}
+        <motion.div
+          whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(6, 182, 212, 0.8)' }}
+          transition={{ type: 'spring', stiffness: 300 }}
+          className="w-[300px] sm:w-[400px] md:w-[550px] h-[300px] sm:h-[400px] md:h-[550px] rounded-full border-4 border-cyan-500 shadow-xl overflow-hidden flex items-center justify-center bg-black max-w-full"
+        >
           <img
             src={imagenCV}
             alt="Foto de Guillermo Leal"
-            className="w-mid h-full object-cover"
+            className="h-full object-cover"
           />
-        </div>
+        </motion.div>
       </motion.div>
 
     </section>
