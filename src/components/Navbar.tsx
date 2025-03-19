@@ -36,12 +36,12 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="flex flex-col items-center bg-gray-800/90 p-4 space-y-4 md:hidden">
-          <a href="#projects" onClick={() => setMenuOpen(false)} className="text-white">Proyectos</a>
-          <a href="#skills" onClick={() => setMenuOpen(false)} className="text-white">Habilidades</a>
-          <a href="#about" onClick={() => setMenuOpen(false)} className="text-white">Sobre mí</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)} className="text-white">Contacto</a>
-          <a href="/GuillermoLealCV.pdf" download className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md flex items-center gap-2">
-            <FiDownload className="text-xl" /> Descargar CV
+          <a href="#projects" onClick={() => setMenuOpen(false)} className="text-white">Projects</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)} className="text-white">Skills</a>
+          <a href="#about" onClick={() => setMenuOpen(false)} className="text-white">About me</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)} className="text-white">Contact</a>
+          <a href="/CVGuillermoLeal.pdf" download className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md flex items-center gap-2">
+            <FiDownload className="text-xl" /> Download CV
           </a>
         </div>
       )}
