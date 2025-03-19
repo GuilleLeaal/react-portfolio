@@ -1,8 +1,11 @@
 import { 
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaJava, FaPython, FaBootstrap 
+  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaJava, FaPython, FaBootstrap, 
+  FaGitAlt, FaGithub 
 } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss } from 'react-icons/si';
-import { MdComputer } from 'react-icons/md';
+import { 
+  SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiMysql 
+} from 'react-icons/si';
+import { MdComputer, MdGroups, MdHttps } from 'react-icons/md';
 
 export default function Skills() {
   const skills = [
@@ -11,13 +14,19 @@ export default function Skills() {
     { name: 'JavaScript', icon: <FaJsSquare className="text-yellow-400" /> },
     { name: 'React', icon: <FaReact className="text-cyan-300" /> },
     { name: 'C#', icon: <span className="text-purple-400 font-bold text-lg">C#</span> },
-    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
-    { name: 'Java', icon: <FaJava className="text-red-500" /> },
+    { name: 'GitHub', icon: <FaGithub className="text-white" /> },
+    { name: 'Git', icon: <FaGitAlt className="text-orange-500" /> },
     { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> },
     { name: 'Python', icon: <FaPython className="text-yellow-300" /> },
     { name: 'TailwindCSS', icon: <SiTailwindcss className="text-teal-300" /> },
     { name: 'Bootstrap', icon: <FaBootstrap className="text-purple-600" /> },
     { name: 'NetSuite', icon: <MdComputer className="text-gray-300" /> },
+    { name: 'Java', icon: <FaJava className="text-red-500" /> },
+    { name: 'SQL', icon: <SiMysql className="text-blue-500" /> },
+    { name: 'SCRUM', icon: <MdGroups className="text-yellow-300" /> }, 
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Figma', icon: <SiFigma className="text-pink-500" /> },
+    { name: 'Vercel', icon: <SiVercel className="text-white" /> },
   ];
 
   return (
