@@ -4,7 +4,7 @@ import imagenCV from '../assets/imagenCV.jpeg';
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 bg-animated-gradient">
-      
+
       {/* Texto animado desde la izquierda */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
@@ -13,20 +13,21 @@ export default function Hero() {
         className="md:w-1/2 flex flex-col justify-center items-center text-center px-8 md:px-20 space-y-6"
       >
         <h1 className="text-5xl md:text-6xl font-bold">
-          ¡Hola! Soy <span className="text-cyan-400">Guillermo Leal</span>
+          Hello! I'm <span className="text-cyan-400">Guillermo Leal</span>
         </h1>
         <p className="text-lg max-w-xl text-gray-300">
-          Soy <span className="text-cyan-400 font-semibold">Desarrollador Junior</span> con una gran pasión por la tecnología y el aprendizaje constante. 
-          <br />Actualmente busco <span className="text-cyan-400 font-semibold">nuevas oportunidades</span> para seguir creciendo profesionalmente.
-          <br />En este portafolio te muestro algunos de mis <span className="text-cyan-400 font-semibold">proyectos</span>, habilidades técnicas y un poco más sobre mí.
+          I'm a <span className="text-cyan-400 font-semibold">Junior Developer</span> with a strong passion for technology and continuous learning.
+          <br />I am currently looking for <span className="text-cyan-400 font-semibold">new opportunities</span> to keep growing professionally.
+          <br />In this portfolio, I showcase some of my <span className="text-cyan-400 font-semibold">projects</span>, technical skills, and a bit more about myself.
         </p>
         <a
           href="#projects"
           className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full transition duration-300"
         >
-          Ver proyectos
+          View Projects
         </a>
       </motion.div>
+
 
       {/* Imagen animada desde la derecha */}
       <motion.div

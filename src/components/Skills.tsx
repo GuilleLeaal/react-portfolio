@@ -22,7 +22,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-b from-gray-950 to-gray-900 scroll-mt-28">
-      <h2 className="text-4xl font-bold text-center mb-12 text-white">Habilidades</h2>
+      <h2 className="text-4xl font-bold text-center mb-12 text-white">Skills</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
         {skills.map((skill, index) => (
           <span 

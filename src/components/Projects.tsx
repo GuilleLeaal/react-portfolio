@@ -7,25 +7,25 @@ import { IoClose } from 'react-icons/io5';
 
 const projects = [
   { 
-    title: 'Proyecto 1', 
-    description: 'Este es el primer proyecto que realicé, bajo la consigna de la Facultad ORT Uruguay. Aunque es algo muy básico, me pareció bien mostrar mis inicios.', 
+    title: 'Project 1', 
+    description: 'This is the first project I created as part of an assignment from ORT Uruguay University. Although it is very basic, I thought it was good to show my beginnings.', 
     imagen: primerProyecto,
     demo: 'https://primer-proyecto-tau.vercel.app'
   },
   { 
-    title: 'Proyecto 2', 
-    description: 'Fue mi primer trabajo completamente enfocado al frontend bajo la consigna de la Facultad ORT Uruguay. Si bien es algo básico, como dije anteriormente, me gusta mostrar mis inicios.', 
+    title: 'Project 2', 
+    description: 'This was my first project fully focused on frontend development as part of an assignment from ORT Uruguay University. Although it is basic, as I mentioned before, I like to show my early work.', 
     imagen: segundoProyecto,
     demo: 'https://dise-o-interfaz-basico.vercel.app'
   },  
   { 
-    title: 'Proyecto 3', 
-    description: 'Primer proyecto en el que utilice React, mas que en el diseño, estaba enfocado en el aprendizaje de su uso funcional (Cambios visuales al momento de realizar un cambio). Se realizo un sistema para que una persona lleve registro de sus comidas, calorias, etc.. Como agregado tiene un mapa con todos los usuarios registrados en la api.', 
+    title: 'Project 3', 
+    description: 'This was the first project where I used React. More than the design, it was focused on learning its functional use (visual changes when performing actions). A system was created for a user to track their meals, calories, etc. Additionally, it includes a map showing all users registered in the API.', 
     imagen: tercerProyecto
   },  
   { 
-    title: 'Proyecto Integrador', 
-    description: 'Es el ultimo proyecto que realice hasta el momento. Es el Proyecto Integrador para la carrera "Analista en tecnologias de la informacion" de la universidad ORT". Diseño realizado segun el gusto del cliente con el que trabajamos. Se realizo un ecommerce junto a un sistema de gestion. En este caso la demo se mostrara en un video desde youtube.', 
+    title: 'Capstone Project', 
+    description: 'This is the latest project I have completed. It is the Capstone Project for the "Information Technology Analyst" degree at ORT University. The design was created according to the client\'s preferences. An e-commerce platform was developed along with a management system. In this case, the demo is shown in a YouTube video.', 
     imagen: proyectoFinal,
     demo: 'https://youtu.be/1CObgj2UHr8'
   },
@@ -36,7 +36,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 scroll-mt-28">
-      <h2 className="text-4xl font-bold text-center mb-12 text-teal-400">Proyectos</h2>
+      <h2 className="text-4xl font-bold text-center mb-12 text-teal-400">Projects</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
         {projects.map((project, index) => (
@@ -73,7 +73,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="inline-block mt-4 px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition duration-300"
               >
-                Ver Demo
+                View Demo
               </a>
             )}
           </div>
