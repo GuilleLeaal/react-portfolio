@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import imagenCV from '../assets/imagenCV.jpeg';
+import imagenCV from '../assets/CVImagen.jpeg';
 
 export default function Hero() {
   return (
@@ -44,7 +44,7 @@ export default function Hero() {
           <img
             src={imagenCV}
             alt="Foto de Guillermo Leal"
-            className="h-full object-cover"
+            className="h-full w-full object-cover"
           />
         </motion.div>
       </motion.div>
