@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+body {
+  background-color: #0f172a;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-animated-gradient {
+  background: linear-gradient(-45deg, #0f172a, #334155, #0f766e, #0f172a);
+  background-size: 300% 300%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
