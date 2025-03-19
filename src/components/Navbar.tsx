@@ -28,7 +28,7 @@ export default function Navbar() {
           <a href="#about" className="px-4 py-2 rounded-lg text-white hover:bg-gradient-to-r hover:from-teal-400 hover:to-cyan-500 hover:scale-105 transition duration-300">About me</a>
           <a href="#contact" className="px-4 py-2 rounded-lg text-white hover:bg-gradient-to-r hover:from-teal-400 hover:to-cyan-500 hover:scale-105 transition duration-300">Contact</a>
 
-          <a href="/GuillermoLealCV.pdf" download className="ml-4 px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md flex items-center gap-2 hover:scale-105 transition duration-300">
+          <a href="/CVGuillermoLeal.pdf" download className="ml-4 px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md flex items-center gap-2 hover:scale-105 transition duration-300">
             <FiDownload className="text-xl" /> Download CV
           </a>
         </div>
