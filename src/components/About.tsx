@@ -5,18 +5,20 @@ export default function About() {
 
       <div className="max-w-3xl mx-auto backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 shadow-lg text-center text-lg text-gray-300">
         <p className="mb-6">
-          I am currently in the final stage of the <span className="text-teal-400">"Information Technology Analyst"</span> degree at ORT Uruguay University - Engineering.
-          Throughout this journey, I have gained knowledge in various programming languages and tools such as <span className="text-teal-400">JavaScript, Java, C#, CSS</span>, among others.
+          I am currently in the final stage of the <span className="text-teal-400">Information Technology Analyst</span> degree at ORT Uruguay University – School of Engineering.
+          I have completed all academic semesters and elective courses, and I am now finishing the final <span className="text-teal-400">4-week workshop</span> to earn my degree.
         </p>
 
         <p className="mb-6">
-          I am currently taking the <span className="text-teal-400">Big Data</span> course, focused on <span className="text-teal-400">Python</span>.
-          (If I successfully complete this final stage, I will obtain my degree by mid-<span className="text-teal-400">2025</span>).
+          I hold an intermediate degree as a <span className="text-teal-400">Web Developer</span> and have solid knowledge of
+          <span className="text-teal-400"> JavaScript, C#, Java, SQL, React</span>, and other technologies.
+          I also gained hands-on experience working as a backend developer using <span className="text-teal-400">JavaScript and NetSuite</span>,
+          which strengthened my backend skills while maintaining my interest in frontend and other areas of IT.
         </p>
 
         <p>
-          I consider myself a <span className="text-teal-400">proactive, responsible person with a great ability to learn</span>.
-          I enjoy working in a team, contributing ideas, and facing new challenges that allow me to continue growing both professionally and personally.
+          I consider myself a <span className="text-teal-400">proactive and responsible person with a strong ability to learn and adapt</span>.
+          I enjoy working in a team, contributing ideas, and taking on new challenges that help me grow both professionally and personally.
         </p>
       </div>
 

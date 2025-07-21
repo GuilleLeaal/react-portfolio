@@ -6,6 +6,7 @@ import {
   SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiMysql 
 } from 'react-icons/si';
 import { MdComputer, MdGroups} from 'react-icons/md';
+import { GrDatabase } from "react-icons/gr";
 
 export default function Skills() {
   const skills = [
@@ -26,7 +27,8 @@ export default function Skills() {
     { name: 'SCRUM', icon: <MdGroups className="text-yellow-300" /> }, 
     { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
     { name: 'Figma', icon: <SiFigma className="text-pink-500" /> },
-    { name: 'Vercel', icon: <SiVercel className="text-white" /> },
+    { name: 'Big Data', icon: <GrDatabase className="text-white" /> },
+    
   ];
 
   return (

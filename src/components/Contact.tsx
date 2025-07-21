@@ -11,7 +11,7 @@ export default function Contact() {
         </p>
 
         <a
-          href="mailto:guillermo.leal.9.9.02@gmail.com"
+          href="mailto:lealguille.09@gmail.com"
           className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 mb-8"
         >
           Send me an email
