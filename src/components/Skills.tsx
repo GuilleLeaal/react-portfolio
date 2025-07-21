@@ -3,7 +3,7 @@ import {
   FaGitAlt, FaGithub 
 } from 'react-icons/fa';
 import { 
-  SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiMysql 
+  SiTypescript, SiTailwindcss, SiFigma, SiMysql 
 } from 'react-icons/si';
 import { MdComputer, MdGroups} from 'react-icons/md';
 import { GrDatabase } from "react-icons/gr";
