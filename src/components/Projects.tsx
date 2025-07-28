@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import primerProyecto from '../assets/PrimerProyecto.png';
 import segundoProyecto from '../assets/SegundoProyecto.png';
-import tercerProyecto from '../assets/TercerProyecto.png';
+import tercerProyecto from '../assets/MoneyFlow.png';
 import proyectoFinal from '../assets/ProyectoFinal.png';
 import { IoClose } from 'react-icons/io5';
 
@@ -17,17 +17,18 @@ const projects = [
     description: 'This was my first project fully focused on frontend development as part of an assignment from ORT Uruguay University. Although it is basic, as I mentioned before, I like to show my early work.', 
     imagen: segundoProyecto,
     demo: 'https://dise-o-interfaz-basico.vercel.app'
-  },  
-  { 
-    title: 'Project 3', 
-    description: 'This was the first project where I used React. More than the design, it was focused on learning its functional use (visual changes when performing actions). A system was created for a user to track their meals, calories, etc. Additionally, it includes a map showing all users registered in the API.', 
-    imagen: tercerProyecto
-  },  
+  },    
   { 
     title: 'Capstone Project', 
-    description: 'This is the latest project I have completed. It is the Capstone Project for the "Information Technology Analyst" degree at ORT University. The design was created according to the client\'s preferences. An e-commerce platform was developed along with a management system. In this case, the demo is shown in a YouTube video.', 
+    description: 'This project was the Capstone Project for the "Information Technology Analyst" degree at ORT University. The design was created according to the clients preferences. An e-commerce platform was developed along with a management system. In this case, the demo is shown in a YouTube video.', 
     imagen: proyectoFinal,
     demo: 'https://youtu.be/1CObgj2UHr8'
+  },
+  { 
+    title: 'Money Flow', 
+    description: 'This is the latest project I have completed. It is a personal finance tracking application built with React, TypeScript, Node.js, and MongoDB. The system allows users to register and log in securely, track income and expenses, view financial summaries on a dynamic dashboard, and generate detailed reports with filters and interactive charts. The design was fully customized to ensure an engaging and modern user experience, with support for dark mode and visual animations. At this stage, the project is available on GitHub.', 
+    imagen: tercerProyecto,
+    demo: 'https://github.com/GuilleLeaal/moneyflow-app'
   },
 ];
 
@@ -66,7 +67,7 @@ export default function Projects() {
             </div>
 
             {/* Botón de Demo */}
-            {project.demo && (
+            {project.demo && project.title != "Money Flow" && (
               <a 
                 href={project.demo} 
                 target="_blank" 
@@ -74,6 +75,16 @@ export default function Projects() {
                 className="inline-block mt-4 px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition duration-300"
               >
                 View Demo
+              </a>
+            )}
+            {project.demo && project.title == "Money Flow" && (
+              <a 
+                href={project.demo} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-4 px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition duration-300"
+              >
+                Git Hub Repository
               </a>
             )}
           </div>
