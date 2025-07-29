@@ -1,10 +1,17 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {      scrollBehavior: {
-      smooth: 'smooth',
-    },},
+    extend: {
+      animation: {
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      boxShadow: {
+        cyanGlow: '0 0 60px rgba(6, 182, 212, 0.5)',
+      },
+    },
   },
   plugins: [],
 }

@@ -1,27 +1,85 @@
+'use client';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+
+const softSkills = [
+  { title: 'Proactivity', description: 'I take initiative and tackle tasks with enthusiasm and independence.' },
+  { title: 'Responsibility', description: 'I meet deadlines and deliver high-quality results consistently.' },
+  { title: 'Teamwork', description: 'I enjoy working collaboratively and value shared success.' },
+  { title: 'Fast Learning', description: 'I adapt quickly to new tools and technologies.' },
+  { title: 'Adaptability', description: 'I thrive in dynamic environments and welcome challenges.' },
+];
+
+function FlipCard({ title, description }: { title: string; description: string }) {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className="w-40 h-40 sm:w-48 sm:h-48 perspective cursor-pointer"
+      onClick={() => setFlipped(!flipped)}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+    >
+      <div
+        className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${
+          flipped ? 'rotate-y-180' : ''
+        }`}
+      >
+        {/* Front */}
+        <div className="absolute w-full h-full flex items-center justify-center bg-white/10 border border-white/20 rounded-xl text-white text-base sm:text-xl font-bold backface-hidden shadow-md backdrop-blur-md">
+          {title}
+        </div>
+        {/* Back */}
+        <div className="absolute w-full h-full flex items-center justify-center bg-teal-600/80 border border-white/10 rounded-xl text-white text-xs sm:text-sm p-4 backface-hidden rotate-y-180 shadow-md backdrop-blur-sm">
+          {description}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 scroll-mt-28">
-      <h2 className="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+    <section id="about" className="py-24 bg-gradient-to-b from-gray-800 to-gray-950 scroll-mt-28">
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-extrabold text-center mb-14 text-teal-400"
+      >
+        About Me
+      </motion.h2>
 
-      <div className="max-w-3xl mx-auto backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 shadow-lg text-center text-lg text-gray-300">
-        <p className="mb-6">
-          I am currently in the final stage of the <span className="text-teal-400">Information Technology Analyst</span> degree at ORT Uruguay University – School of Engineering.
-          I have completed all academic semesters and elective courses, and I am now finishing the final <span className="text-teal-400">4-week workshop</span> to earn my degree.
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="max-w-4xl mx-auto px-6 sm:px-10 py-10 bg-white/5 border border-white/20 rounded-3xl backdrop-blur-md 
+                   shadow-xl text-center text-lg text-gray-300 space-y-6"
+      >
+        <p>
+          I am currently in the final stage of the <span className="text-teal-400 font-semibold">Information Technology Analyst</span> degree at ORT Uruguay University – School of Engineering.
+          I have completed all academic semesters and elective courses, and I am now finishing the final <span className="text-teal-400 font-semibold">4-week workshop</span> to earn my degree.
         </p>
 
-        <p className="mb-6">
-          I hold an intermediate degree as a <span className="text-teal-400">Web Developer</span> and have solid knowledge of
-          <span className="text-teal-400"> JavaScript, C#, Java, SQL, React</span>, and other technologies.
-          I also gained hands-on experience working as a backend developer using <span className="text-teal-400">JavaScript and NetSuite</span>,
+        <p>
+          I hold an intermediate degree as a <span className="text-teal-400 font-semibold">Web Developer</span> and have solid knowledge of
+          <span className="text-teal-400 font-semibold"> JavaScript, C#, Java, SQL, React</span>, and other technologies.
+          I also gained hands-on experience working as a backend developer using <span className="text-teal-400 font-semibold">JavaScript and NetSuite</span>,
           which strengthened my backend skills while maintaining my interest in frontend and other areas of IT.
         </p>
 
         <p>
-          I consider myself a <span className="text-teal-400">proactive and responsible person with a strong ability to learn and adapt</span>.
+          I consider myself a <span className="text-teal-400 font-semibold">proactive and responsible person with a strong ability to learn and adapt</span>.
           I enjoy working in a team, contributing ideas, and taking on new challenges that help me grow both professionally and personally.
         </p>
-      </div>
+      </motion.div>
 
+      <div className="mt-16 flex flex-wrap justify-center gap-4 sm:gap-6 px-6">
+        {softSkills.map((skill, idx) => (
+          <FlipCard key={idx} title={skill.title} description={skill.description} />
+        ))}
+      </div>
     </section>
   );
 }
