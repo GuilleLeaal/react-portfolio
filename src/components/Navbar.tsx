@@ -51,7 +51,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/CVGuillermoLeal.pdf"
+            href="/CV_GuillermoLeal.pdf"
             download
             className="ml-4 px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md flex items-center gap-2 hover:scale-105 transition duration-300"
           >
@@ -82,7 +82,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/CVGuillermoLeal.pdf"
+              href="/CV_GuillermoLeal.pdf"
               download
               className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md flex items-center gap-2"
             >
