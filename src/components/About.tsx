@@ -59,7 +59,7 @@ export default function About() {
         <p>
           I am an <span className="text-teal-400 font-semibold">Information Technology Analyst graduate</span> from ORT Uruguay University – School of Engineering.
           Throughout my studies, I completed all academic semesters and elective courses, gaining solid knowledge in
-          <span className="text-teal-400 font-semibold">JavaScript, C#, Java, SQL, React</span>, and other technologies.
+          <span className="text-teal-400 font-semibold"> JavaScript, C#, Java, SQL, React</span>, and other technologies.
         </p>
 
         <p>
