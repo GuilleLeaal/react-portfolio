@@ -21,9 +21,8 @@ function FlipCard({ title, description }: { title: string; description: string }
       onMouseLeave={() => setFlipped(false)}
     >
       <div
-        className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${
-          flipped ? 'rotate-y-180' : ''
-        }`}
+        className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${flipped ? 'rotate-y-180' : ''
+          }`}
       >
         {/* Front */}
         <div className="absolute w-full h-full flex items-center justify-center bg-white/10 border border-white/20 rounded-xl text-white text-base sm:text-xl font-bold backface-hidden shadow-md backdrop-blur-md">
@@ -58,20 +57,19 @@ export default function About() {
                    shadow-xl text-center text-lg text-gray-300 space-y-6"
       >
         <p>
-          I am currently in the final stage of the <span className="text-teal-400 font-semibold">Information Technology Analyst</span> degree at ORT Uruguay University – School of Engineering.
-          I have completed all academic semesters and elective courses, and I am now finishing the final <span className="text-teal-400 font-semibold">4-week workshop</span> to earn my degree.
+          I am an <span className="text-teal-400 font-semibold">Information Technology Analyst graduate</span> from ORT Uruguay University – School of Engineering.
+          Throughout my studies, I completed all academic semesters and elective courses, gaining solid knowledge in
+          <span className="text-teal-400 font-semibold">JavaScript, C#, Java, SQL, React</span>, and other technologies.
         </p>
 
         <p>
-          I hold an intermediate degree as a <span className="text-teal-400 font-semibold">Web Developer</span> and have solid knowledge of
-          <span className="text-teal-400 font-semibold"> JavaScript, C#, Java, SQL, React</span>, and other technologies.
           I also gained hands-on experience working as a backend developer using <span className="text-teal-400 font-semibold">JavaScript and NetSuite</span>,
           which strengthened my backend skills while maintaining my interest in frontend and other areas of IT.
         </p>
 
         <p>
-          I consider myself a <span className="text-teal-400 font-semibold">proactive and responsible person with a strong ability to learn and adapt</span>.
-          I enjoy working in a team, contributing ideas, and taking on new challenges that help me grow both professionally and personally.
+          I consider myself a <span className="text-teal-400 font-semibold">proactive and responsible professional with a strong ability to learn and adapt</span>.
+          I enjoy working in teams, contributing ideas, and taking on new challenges that drive my professional and personal growth.
         </p>
       </motion.div>
 
