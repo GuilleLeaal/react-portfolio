@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 // @ts-ignore
 import { loadSlim } from 'tsparticles-slim';
-import imagenCV from '../assets/CVImagen.jpeg';
+import imagenCV from '../assets/CVImagen.jpg';
 
 export default function Hero() {
   const particlesInit = useCallback(async (engine: any) => {
