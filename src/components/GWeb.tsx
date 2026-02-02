@@ -111,7 +111,7 @@ export default function GWeb() {
           View project on Instagram
         </a>
         <span className="text-xs text-gray-400">
-          Personal venture · Available for similar projects
+          Personal venture
         </span>
       </motion.div>
     </section>
