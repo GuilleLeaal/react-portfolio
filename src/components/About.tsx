@@ -1,82 +1,128 @@
 'use client';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+
+import { motion, useReducedMotion } from 'framer-motion';
+import { FaCheckCircle } from 'react-icons/fa';
 
 const softSkills = [
-  { title: 'Proactivity', description: 'I take initiative and tackle tasks with enthusiasm and independence.' },
-  { title: 'Responsibility', description: 'I meet deadlines and deliver high-quality results consistently.' },
-  { title: 'Teamwork', description: 'I enjoy working collaboratively and value shared success.' },
-  { title: 'Fast Learning', description: 'I adapt quickly to new tools and technologies.' },
-  { title: 'Adaptability', description: 'I thrive in dynamic environments and welcome challenges.' },
+  { title: 'Proactivity', description: 'I take initiative, identify priorities, and move tasks forward with ownership.' },
+  { title: 'Responsibility', description: 'I deliver reliably, communicate clearly, and protect quality under deadlines.' },
+  { title: 'Teamwork', description: 'I collaborate well, share context, and align decisions with the team’s goals.' },
+  { title: 'Fast Learning', description: 'I adapt quickly to new tools and domains and apply feedback immediately.' },
+  { title: 'Adaptability', description: 'I’m comfortable in dynamic environments and enjoy solving ambiguous problems.' },
 ];
 
-function FlipCard({ title, description }: { title: string; description: string }) {
-  const [flipped, setFlipped] = useState(false);
-
-  return (
-    <div
-      className="w-40 h-40 sm:w-48 sm:h-48 perspective cursor-pointer"
-      onClick={() => setFlipped(!flipped)}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
-    >
-      <div
-        className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${flipped ? 'rotate-y-180' : ''
-          }`}
-      >
-        {/* Front */}
-        <div className="absolute w-full h-full flex items-center justify-center bg-white/10 border border-white/20 rounded-xl text-white text-base sm:text-xl font-bold backface-hidden shadow-md backdrop-blur-md">
-          {title}
-        </div>
-        {/* Back */}
-        <div className="absolute w-full h-full flex items-center justify-center bg-teal-600/80 border border-white/10 rounded-xl text-white text-xs sm:text-sm p-4 backface-hidden rotate-y-180 shadow-md backdrop-blur-sm">
-          {description}
-        </div>
-      </div>
-    </div>
-  );
-}
+const highlights = [
+  'ORT Uruguay — Information Technology Analyst (Engineering School)',
+  'Backend experience in a NetSuite environment (JavaScript)',
+  'Full-stack projects: finance tracking, e-commerce & management systems',
+  'Strong focus on clean architecture, UX, and practical delivery',
+];
 
 export default function About() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-gray-800 to-gray-950 scroll-mt-28">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl font-extrabold text-center mb-14 text-teal-400"
-      >
-        About Me
-      </motion.h2>
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0b0b14] to-[#07070d] py-24 scroll-mt-28"
+      aria-label="About section"
+    >
+      {/* Background accents */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[-160px] top-20 h-[520px] w-[520px] rounded-full bg-teal-400/8 blur-[170px]" />
+        <div className="absolute right-[-180px] bottom-[-260px] h-[520px] w-[520px] rounded-full bg-cyan-500/8 blur-[180px]" />
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="max-w-4xl mx-auto px-6 sm:px-10 py-10 bg-white/5 border border-white/20 rounded-3xl backdrop-blur-md 
-                   shadow-xl text-center text-lg text-gray-300 space-y-6"
-      >
-        <p>
-          I am an <span className="text-teal-400 font-semibold">Information Technology Analyst graduate</span> from ORT Uruguay University – School of Engineering.
-          Throughout my studies, I completed all academic semesters and elective courses, gaining solid knowledge in
-          <span className="text-teal-400 font-semibold"> JavaScript, C#, Java, SQL, React</span>, and other technologies.
-        </p>
+      <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-8">
+        {/* Title */}
+        <motion.div
+          initial={prefersReducedMotion ? undefined : { opacity: 0, y: 14 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            About
+          </h2>
+          <p className="mt-4 text-pretty text-base leading-relaxed text-white/65 sm:text-lg">
+            My background, what I build, and how I work.
+          </p>
+        </motion.div>
 
-        <p>
-          I also gained hands-on experience working as a backend developer using <span className="text-teal-400 font-semibold">JavaScript and NetSuite</span>,
-          which strengthened my backend skills while maintaining my interest in frontend and other areas of IT.
-        </p>
+        {/* Content */}
+        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+          {/* Left: narrative */}
+          <motion.div
+            initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
+            whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-80px' }}
+            className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl"
+          >
+            <h3 className="text-xl font-semibold text-white">Profile</h3>
 
-        <p>
-          I consider myself a <span className="text-teal-400 font-semibold">proactive and responsible professional with a strong ability to learn and adapt</span>.
-          I enjoy working in teams, contributing ideas, and taking on new challenges that drive my professional and personal growth.
-        </p>
-      </motion.div>
+            <div className="mt-4 space-y-4 text-sm leading-relaxed text-white/70">
+              <p>
+                I’m an <span className="text-teal-300 font-semibold">Information Technology Analyst</span> graduate from
+                ORT Uruguay (Engineering School). I focus on building modern web applications with a balance of
+                clean backend fundamentals and polished UI/UX.
+              </p>
 
-      <div className="mt-16 flex flex-wrap justify-center gap-4 sm:gap-6 px-6">
-        {softSkills.map((skill, idx) => (
-          <FlipCard key={idx} title={skill.title} description={skill.description} />
-        ))}
+              <p>
+                I’ve worked as a backend developer in a <span className="text-teal-300 font-semibold">NetSuite</span>{' '}
+                environment using JavaScript, strengthening my experience with APIs, data handling and production-oriented
+                workflows.
+              </p>
+
+              <p>
+                Today, I build real projects through <span className="text-teal-300 font-semibold">GWeb</span>, ranging from
+                high-impact websites to e-commerce setups and custom management systems — always aiming for maintainable,
+                scalable and practical solutions.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right: highlights + traits */}
+          <motion.div
+            initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
+            whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.05 }}
+            viewport={{ once: true, margin: '-80px' }}
+            className="space-y-6"
+          >
+            {/* Highlights */}
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
+              <h3 className="text-xl font-semibold text-white">Highlights</h3>
+
+              <ul className="mt-4 space-y-3">
+                {highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-3 text-sm text-white/70">
+                    <FaCheckCircle className="mt-0.5 shrink-0 text-teal-300" />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Soft skills */}
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
+              <h3 className="text-xl font-semibold text-white">How I work</h3>
+
+              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {softSkills.map((s) => (
+                  <div
+                    key={s.title}
+                    className="rounded-2xl border border-white/10 bg-black/20 p-5 transition hover:bg-white/[0.06]"
+                  >
+                    <div className="text-sm font-semibold text-teal-200">{s.title}</div>
+                    <p className="mt-2 text-sm leading-relaxed text-white/65">{s.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

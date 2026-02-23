@@ -14,12 +14,31 @@ export default function App() {
     <div className="bg-gray-900 text-white scroll-smooth">
       <Navbar />
       <BackToTop />
-      <Hero />
-      <GWeb />
-      <Projects />
-      <Skills />
-      <About />
-      <Contact />
+
+      <section id="hero">
+        <Hero />
+      </section>
+
+      <section id="gweb">
+        <GWeb />
+      </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
       <Footer />
     </div>
   );
