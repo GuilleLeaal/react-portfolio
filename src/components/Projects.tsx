@@ -2,8 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { IoClose, IoOpenOutline, IoLogoGithub } from "react-icons/io5";
 
-import primerProyecto from "../assets/PrimerProyecto.png";
-import segundoProyecto from "../assets/SegundoProyecto.png";
 import tercerProyecto from "../assets/MoneyFlow.png";
 import proyectoFinal from "../assets/ProyectoCalypso.png";
 
