@@ -4,6 +4,10 @@ import { IoClose, IoOpenOutline, IoLogoGithub } from "react-icons/io5";
 
 import tercerProyecto from "../assets/MoneyFlow.png";
 import proyectoFinal from "../assets/ProyectoCalypso.png";
+import vittaGroupImg from "../assets/VittaGroup.jpg";
+// Si todavía no tenés imagen para VittaGroup, comentá el import de arriba
+// y sacá `image: vittaGroupImg` del objeto.
+// Mi Ritmo lo dejo sin screenshot por ahora, estilo backend/engineering.
 
 type Badge = "Featured" | "Production" | "Engineering";
 
@@ -11,17 +15,10 @@ type Project = {
   title: string;
   subtitle?: string;
   description: string;
-
-  // optional: some projects may have no screenshot yet
   image?: string;
-
   tags: string[];
   badge?: Badge;
-
-  // interview-grade highlights (what tech leads care about)
   highlights: string[];
-
-  // links
   live?: string;
   repo?: string;
 };
@@ -57,6 +54,24 @@ export default function Projects() {
         ],
         repo: "https://github.com/GuilleLeaal/moneyflow-app",
       },
+            {
+        title: "VittaGroup",
+        subtitle: "Production Real Estate Website with CMS",
+        description:
+          "Premium real estate minisite built with Next.js and Sanity CMS, featuring dynamic property pages, structured content, and SEO-focused architecture.",
+        image: vittaGroupImg,
+        tags: ["Next.js", "Tailwind", "Sanity CMS", "SEO", "App Router"],
+        badge: "Production",
+        highlights: [
+          "Dynamic property pages with slug-based routing",
+          "Sanity CMS integration for manageable listings content",
+          "SEO metadata + sitemap + structured page architecture",
+          "Responsive premium UI adapted for real estate presentation",
+          "Catalog + listing detail flow with reusable components",
+          "Production-ready deployment structure and domain setup",
+        ],
+        live: "https://vittagroup.uy",
+      },
       {
         title: "Calypso Eventos",
         subtitle: "Production Landing Page (Client Project)",
@@ -79,7 +94,6 @@ export default function Projects() {
         subtitle: "Backend Architecture — Fitness Management API",
         description:
           "Modular backend system built with NestJS + Prisma + PostgreSQL, designed for scalability, ownership rules, and clean patterns.",
-        // no screenshot yet
         tags: ["NestJS", "Prisma", "PostgreSQL", "JWT", "REST API"],
         badge: "Engineering",
         highlights: [
@@ -92,22 +106,29 @@ export default function Projects() {
         ],
         // repo: "https://github.com/tuusuario/perseo-trainers",
       },
-      // Optional 4th project (if you want):
-      // {
-      //   title: "GWeb",
-      //   subtitle: "Conversion-Focused Landing Templates",
-      //   description:
-      //     "Landing template system for local businesses, focused on conversion and SEO-ready structure.",
-      //   image: segundoProyecto,
-      //   tags: ["HTML", "Tailwind", "SEO", "Landing Pages"],
-      //   badge: "Production",
-      //   highlights: [
-      //     "Reusable templates by business category",
-      //     "Conversion-first layout decisions",
-      //     "SEO-friendly structure and metadata setup",
-      //   ],
-      //   live: "https://your-domain.com",
-      // },
+      {
+        title: "Mi Ritmo",
+        subtitle: "Behavioral Analytics & Energy Planning Backend",
+        description:
+          "Backend-first product designed to model personal energy, friction, sleep, activity impact, and planning insights through structured analytics endpoints.",
+        tags: [
+          "NestJS",
+          "PostgreSQL",
+          "Prisma",
+          "Analytics",
+          "Prediction",
+        ],
+        badge: "Engineering",
+        highlights: [
+          "Custom domain modeling for sleep, activity, energy, and friction",
+          "Analytics endpoints such as heatmaps, scoring, and weekly insights",
+          "Prediction-oriented backend logic beyond standard CRUD flows",
+          "Strict DTO validation and hardened API structure",
+          "Consistent confidence scoring and planner preview logic",
+          "Product-thinking architecture built around real behavioral use cases",
+        ],
+        // repo: "https://github.com/tuusuario/mi-ritmo",
+      },
     ],
     []
   );
@@ -117,14 +138,15 @@ export default function Projects() {
   const { featured, engineering } = useMemo(() => {
     const feat: Project[] = [];
     const eng: Project[] = [];
+
     for (const p of projects) {
       if (p.badge === "Engineering") eng.push(p);
       else feat.push(p);
     }
+
     return { featured: feat, engineering: eng };
   }, [projects]);
 
-  // modal: scroll lock, ESC, focus trap, restore focus
   useEffect(() => {
     if (!selected) return;
 
@@ -139,7 +161,6 @@ export default function Projects() {
         setSelected(null);
       }
 
-      // simple focus trap (no libs)
       if (e.key === "Tab") {
         const root = dialogRef.current;
         if (!root) return;
@@ -347,8 +368,8 @@ export default function Projects() {
                 Engineering & Backend
               </h3>
               <p className="mt-2 text-sm text-white/60 max-w-2xl">
-                Work where the value is architecture, data modeling, authorization,
-                and implementation patterns.
+                Work where the value is architecture, data modeling,
+                authorization, analytics, and implementation patterns.
               </p>
             </motion.div>
 
@@ -378,11 +399,19 @@ export default function Projects() {
               aria-label={`Project details: ${selected.title}`}
               className="relative max-w-5xl w-full bg-[#0b0b14] border border-white/10 rounded-3xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.55)] max-h-[88vh] flex flex-col"
               initial={
-                prefersReducedMotion ? undefined : { scale: 0.98, y: 10, opacity: 0 }
+                prefersReducedMotion
+                  ? undefined
+                  : { scale: 0.98, y: 10, opacity: 0 }
               }
-              animate={prefersReducedMotion ? undefined : { scale: 1, y: 0, opacity: 1 }}
+              animate={
+                prefersReducedMotion
+                  ? undefined
+                  : { scale: 1, y: 0, opacity: 1 }
+              }
               exit={
-                prefersReducedMotion ? undefined : { scale: 0.99, y: 8, opacity: 0 }
+                prefersReducedMotion
+                  ? undefined
+                  : { scale: 0.99, y: 8, opacity: 0 }
               }
               transition={{ duration: 0.22 }}
               onClick={(e) => e.stopPropagation()}
@@ -396,7 +425,6 @@ export default function Projects() {
                 <IoClose size={22} />
               </button>
 
-              {/* Visual header */}
               {selected.image ? (
                 <img
                   src={selected.image}
@@ -416,7 +444,6 @@ export default function Projects() {
                 </div>
               )}
 
-              {/* Content */}
               <div className="p-6 sm:p-8 overflow-auto">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div>
@@ -478,7 +505,6 @@ export default function Projects() {
                   {selected.description}
                 </p>
 
-                {/* Tags */}
                 <div className="mt-5 flex flex-wrap gap-2">
                   {selected.tags.map((tag) => (
                     <span
@@ -490,7 +516,6 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Highlights */}
                 <div className="mt-6">
                   <h4 className="text-white/90 font-semibold">Highlights</h4>
                   <ul className="mt-3 space-y-2 text-sm text-white/70">
@@ -504,7 +529,8 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-7 text-xs text-white/45">
-                  Tip: press <span className="text-white/70">ESC</span> to close.
+                  Tip: press <span className="text-white/70">ESC</span> to
+                  close.
                 </div>
               </div>
             </motion.div>
