@@ -1,33 +1,23 @@
-import { useEffect, useState } from 'react';
-import { FiArrowUp } from 'react-icons/fi';
+import { useEffect, useState } from "react";
+import { FiArrowUp } from "react-icons/fi";
+import { useLanguage } from "../i18n";
 
 export default function BackToTop() {
-  const [showButton, setShowButton] = useState(false);
-
+  const { t } = useLanguage();
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      setShowButton(window.scrollY > 300); // Muestra el botón después de scrollear 300px
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setVisible(window.scrollY > 900);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    showButton && (
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 
-             bg-cyan-500 hover:bg-cyan-600 text-white p-4 rounded-full 
-             shadow-lg transition duration-300 hover:scale-110 z-50"
-      >
-        <FiArrowUp size={24} />
-      </button>
-
-    )
-  );
+  return visible ? (
+    <a
+      className="back-top icon-button"
+      href="#hero"
+      aria-label={t("Volver al inicio", "Back to top")}
+    >
+      <FiArrowUp />
+    </a>
+  ) : null;
 }

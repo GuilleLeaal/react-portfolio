@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# Guillermo Leal · Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personal en React 19, TypeScript y Vite. Contenido en español e inglés, proyectos filtrables, experiencia profesional, GWeb y CV descargable.
 
-Currently, two official plugins are available:
+## Desarrollo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Validación
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run lint
+npm run build
+npm run preview
 ```
+
+La compilación genera `dist/`. No requiere variables de entorno, credenciales ni servicios de backend. El contacto abre el cliente de correo; no envía formularios ni almacena información de visitantes. La preferencia de idioma se conserva localmente cuando el navegador lo permite.
+
+## Actualizar contenido
+
+- `src/data.ts`: proyectos, experiencia, enlaces de contacto y ruta del CV. Los textos de los proyectos y la experiencia tienen versiones `es` y `en`.
+- `src/components/`: textos de cada sección mediante `useLanguage().t(es, en)`.
+- `public/Guillermo_Leal_CV.pdf`: CV actual en español. Si cambia el nombre, actualizar `profile.cv` y el enlace de `noscript` en `index.html`.
+- `public/images/`: versiones WebP de las capturas y del retrato. Los originales existentes se conservan en `src/assets/`.
+- `src/index.css`: identidad visual, estilos responsive y movimiento reducido.
+- `index.html`, `public/robots.txt` y `public/sitemap.xml`: metadatos y dominio público. Revisar los tres si cambia la URL de publicación.
+- `public/social-preview.png`: imagen para compartir en redes (1200 × 630).
+
+Las ilustraciones de proyectos sin captura son composiciones gráficas; no representan pantallas de las aplicaciones. En la galería de Pallotti, la autoría de las entregas corresponde a los estudiantes; el trabajo presentado es la plataforma y su integración.
+
+## Accesibilidad
+
+Navegación por anclas, enlace para saltar al contenido, menú móvil con Escape, filtros con estado accesible y detalles de proyecto en un diálogo nativo con foco contenido, cierre con Escape y retorno al disparador. Las animaciones respetan `prefers-reduced-motion`.
+
+Las fuentes se solicitan a Google Fonts con `display=swap` y alternativas del sistema. La identidad de Git y el usuario de credenciales de este checkout deben permanecer configurados localmente para la cuenta personal `GuilleLeaal`.
