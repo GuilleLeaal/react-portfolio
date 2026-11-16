@@ -31,7 +31,9 @@ function ProjectVisual({
               ? 669
               : project.id === "moneyflow"
                 ? 674
-                : 670
+                : project.id === "iconic"
+                  ? 661
+                  : 670
           }
           className={detail ? "detail-image" : ""}
         />

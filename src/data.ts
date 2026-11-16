@@ -114,6 +114,8 @@ export const projects: Project[] = [
       },
     ],
     tags: ["React", "TypeScript", "Supabase", "PostgreSQL"],
+    image: asset("iconic"),
+    live: "https://iconic-free.vercel.app/",
     repo: "https://github.com/GuilleLeaal/iconic-free",
   },
   {
